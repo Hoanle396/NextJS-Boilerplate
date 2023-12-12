@@ -1,20 +1,73 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: {
+          DEFAULT: 'var(--primary-color)',
+          foreground: 'var(--text-color)'
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary-color)',
+          foreground: 'var(--text-color)'
+        },
+        foreground: {
+          DEFAULT: 'var(--fg)',
+          secondary: 'var( --text-color-secondary)'
+        },
+        background: {
+          DEFAULT: 'var(--bg)',
+          secondary: 'var(--bg-secondary)'
+        },
+        border: {
+          DEFAULT: 'hsl(var(--border))'
+        },
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          light: 'hsl(var(--success-light))'
+        },
+        error: {
+          DEFAULT: 'hsl(var(--error))',
+          light: 'hsl(var(--error-light))'
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--warning))',
+          light: 'hsl(var(--warning-light))'
+        },
+        readonly: {
+          DEFAULT: '#E6E6E6',
+          border: '#B6B6B6'
+        }
       },
-    },
+      backgroundColor: {
+        primary: 'var(--primary-color)',
+        secondary: 'var(--bg-secondary)'
+      },
+      common: {
+        white: '#fff',
+        black: '#000'
+      },
+      fontFamily: {
+        'source-sans': ['source-sans', 'sans-serif']
+      },
+      borderRadius: {
+        '3xl': '36px',
+        '2xl': '24px',
+        xl: '16px',
+        lg: '12px',
+        md: '8px',
+        sm: '4px',
+        haft: '50%'
+      }
+    }
   },
-  plugins: [],
+  corePlugins: {
+    preflight: false
+  },
+  plugins: []
 }
 export default config
